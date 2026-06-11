@@ -34,11 +34,28 @@ df1.drop(["salary"],axis=1,inplace=True)
 # print(df1)
 
 # loc and iloc
-print(df1.loc[2,"name"])
-print(df1.iloc[2,0])
+# print(df1.loc[2,"name"])
+# print(df1.iloc[2,0])
 
 # get single row data using loc
-print(df1.loc[2],"\n")
+# print(df1.loc[2],"\n")
 
 # get single row data using iloc
-print(df1.iloc[2])
+# print(df1.iloc[2])
+
+url = "https://raw.githubusercontent.com/khushal2772/Grras_Internship/refs/heads/main/python/pandas/student-data.json"
+df = pd.read_json(url)
+# print(df,"\n")
+
+# male students
+# print(df[df["gender"] == "Male"])
+
+# print(df.loc[:, ["name", "maths"]])
+# print(df.iloc[3:10:5])
+
+# filter
+# print(df.loc[df["physics"] > 80, ["name", "physics"]])
+# print(df.loc[df["physics"] <= 56, ["name", "physics"]])
+
+# print(df.loc[(df["maths"] <= 90)&(df["physics"] >= 90)], ["name","physics","maths"])
+print(df.loc[(df["maths"] <= 90)&(df["physics"] >= 90) | (df["gender"] == "Male")], ["name","physics","maths"])

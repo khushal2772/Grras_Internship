@@ -101,6 +101,7 @@ print(df["doj"].dt.day_name())
 
 # add 20 days
 df["doj"] = df["doj"] + pd.Timedelta(days=10)
-df["doj"] + pd.Timedelta(days=10)
+df["doj"] + pd.Timedelta(days=10) # not change in original
 print(df)
 
+                                                                                                                                                                                                                                           

@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 fruits = ['apple','banana','orange','watermelon']
 count = [40,30,15,70]
 # plt.pie(count, labels=fruits)
@@ -26,3 +27,15 @@ colors = ["red", "blue", "green", "yellow"]
 
 # plt.pie(data, labels=labels, colors=colors)
 # plt.show()
+
+
+
+x = np.array([1, 2, 3, 4])
+y = np.array([80, 75, 90, 85])
+
+x_smooth = np.linspace(x.min(), x.max(), 100)
+y_smooth = np.interp(x_smooth, x, y)   # smooth-ish interpolation
+
+plt.plot(x_smooth, y_smooth)
+plt.scatter(x, y)   # original points
+plt.show()
